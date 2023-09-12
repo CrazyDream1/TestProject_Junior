@@ -39,10 +39,11 @@
                 <DataGrid.Columns>
                     <DataGridTextColumn x:Name="iDColumn" Binding="{Binding Id}" Header="ID" Width="35"/>
                     <DataGridTextColumn x:Name="nameColumn" Binding="{Binding Name}" Header="ФИО" Width="200"/>
-                    <DataGridTextColumn x:Name="nameAddress" Binding="{Binding Address}" Header="Адрес" Width="385"/>
+                    <DataGridTextColumn x:Name="nameAddress" Binding="{Binding Address}" Header="Адрес" Width="325"/>
                     <DataGridTextColumn x:Name="dateOfBirthColumn" Binding="{Binding DateOfBirth, StringFormat=dd.MM.yyyy}" Header="Дата рождения" Width="110"/>
                     <DataGridTextColumn x:Name="phoneNumberColumn" Binding="{Binding PhoneNumber}" Header="Телефон" Width="125"/>
                     <DataGridTextColumn x:Name="genderColumn" Binding="{Binding Gender, Converter={StaticResource EnumDescriptionConverter}}" Header="Пол" Width="80"/>
+                    <DataGridTextColumn x:Name="ageColumn" Binding="{Binding Age}" Header="Возраст" Width="60"/>
                     <DataGridTemplateColumn Header="Редактировать">
                         <DataGridTemplateColumn.CellTemplate >
                             <DataTemplate>

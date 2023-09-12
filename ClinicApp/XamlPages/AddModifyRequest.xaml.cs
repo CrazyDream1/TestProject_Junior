@@ -4,6 +4,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using ClinicApp.EntityModels;
+using ClinicApp.HelperClasses;
 
 namespace ClinicApp.XamlPages
 {
@@ -65,6 +66,22 @@ namespace ClinicApp.XamlPages
                     status = false;
                     messageBuilder.Append("Дата обращения - обязательное поле для ввода.\n");
                 }
+                else
+                {
+                    if (dateOfRequest > DateTime.Now)
+                    {
+                        status = false;
+                        messageBuilder.Append("Дата рождения - не может быть в будущем.\n");
+                    }
+                    else
+                    {
+                        if (dateOfRequest < BaseDate.BaseDateConst)
+                        {
+                            status = false;
+                            messageBuilder.Append("Дата рождения - не может быть настолько в прошлом.\n");
+                        }
+                    }
+                }
                 #endregion
                 #region Checking entered purpose of request
                 if (String.IsNullOrEmpty(purpose))
@@ -98,7 +115,7 @@ namespace ClinicApp.XamlPages
                         m_request.DateOfRequest = dateOfRequest.GetValueOrDefault(DateTime.Now);
                         m_request.Purpose = purpose;
                         m_request.RequestType = requestType;
-                        m_request.Patient = new PatientCard();
+                        m_request.Patient = m_patient;
                         isSucceed = repository.ModifyRequest(m_request);
                     }
                     #endregion

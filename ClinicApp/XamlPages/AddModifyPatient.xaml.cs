@@ -6,6 +6,7 @@ using System.Windows.Media;
 using ClinicApp.EntityModels;
 using System.Configuration;
 using System.Data.SqlClient;
+using ClinicApp.HelperClasses;
 
 namespace ClinicApp.XamlPages
 {
@@ -73,6 +74,22 @@ namespace ClinicApp.XamlPages
                     status = false;
                     messageBuilder.Append("Дата рождения - обязательное поле для ввода.\n");
                 }
+                else
+                {
+                    if (dateOfBirth > DateTime.Now)
+                    {
+                        status = false;
+                        messageBuilder.Append("Дата рождения - не может быть в будущем.\n");
+                    }
+                    else
+                    {
+                        if (dateOfBirth < BaseDate.BaseDateConst)
+                        {
+                            status = false;
+                            messageBuilder.Append("Дата рождения - не может быть настолько в прошлом.\n");
+                        }
+                    }
+                } 
                 #endregion
                 #region Checking entered address
                 if (String.IsNullOrEmpty(address))

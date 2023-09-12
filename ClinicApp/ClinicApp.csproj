@@ -87,6 +87,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="HelperClasses\BaseDate.cs" />
     <Compile Include="Migrations\201711021256133_InitialCreate.cs" />
     <Compile Include="Migrations\201711021256133_InitialCreate.Designer.cs">
       <DependentUpon>201711021256133_InitialCreate.cs</DependentUpon>
@@ -171,21 +172,21 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resourses\Images\back_arrow.png">
+    <Resource Include="Resourses\Images\back_arrow.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resourses\Images\doctor.png">
+    </Resource>
+    <Resource Include="Resourses\Images\doctor.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resourses\Images\red_cross.ico">
+    </Resource>
+    <Resource Include="Resourses\Images\red_cross.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resourses\Images\Tablet.png">
+    </Resource>
+    <Resource Include="Resourses\Images\Tablet.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resourses\Images\trash.png">
+    </Resource>
+    <Resource Include="Resourses\Images\trash.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

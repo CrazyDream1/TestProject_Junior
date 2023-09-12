@@ -89,7 +89,7 @@
         <Style TargetType="{x:Type Grid}" x:Key="GridTablet">
             <Setter Property="Background">
                 <Setter.Value>
-                    <ImageBrush ImageSource="/Resourses/Images/Tablet.png" AlignmentX="Left" AlignmentY="Top" TileMode="Tile" Stretch="None"/>
+                    <ImageBrush ImageSource="Resourses/Images/Tablet.png" AlignmentX="Left" AlignmentY="Top" TileMode="Tile" Stretch="None"/>
                 </Setter.Value>
             </Setter>
         </Style>
